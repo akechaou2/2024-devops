@@ -4,6 +4,6 @@ services:
     build:
       context: .
     container_name: python
-    image: akechaou/python:1.0.0
+    image: akechaou91000/python:1.0.0
     ports:
     - 5000:5000
