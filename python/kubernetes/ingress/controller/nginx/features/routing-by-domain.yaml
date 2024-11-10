@@ -14,7 +14,7 @@ spec:
           service:
             name: service-a
             port:
-              number: 8080
+              number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -32,5 +32,5 @@ spec:
           service:
             name: service-b
             port:
-              number: 8080
+              number: 80
 ---

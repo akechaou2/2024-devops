@@ -272,7 +272,7 @@ spec:
   type: ClusterIP
   ports:
     - name: https-webhook
-      port: 8443
+      port: 443
       targetPort: webhook
       appProtocol: https
   selector:
@@ -302,12 +302,12 @@ spec:
     - IPv4
   ports:
     - name: http
-      port: 8080
+      port: 80
       protocol: TCP
       targetPort: http
       appProtocol: http
     - name: https
-      port: 8443
+      port: 443
       protocol: TCP
       targetPort: https
       appProtocol: https
@@ -367,7 +367,7 @@ spec:
             - --controller-class=k8s.io/ingress-nginx
             - --ingress-class=nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
-            - --validating-webhook=:8443
+            - --validating-webhook=:443
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
             - --enable-metrics=false
@@ -416,13 +416,13 @@ spec:
             timeoutSeconds: 1
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 80
               protocol: TCP
             - name: https
-              containerPort: 8443
+              containerPort: 443
               protocol: TCP
             - name: webhook
-              containerPort: 8443
+              containerPort: 443
               protocol: TCP
           volumeMounts:
             - name: webhook-cert
@@ -498,7 +498,7 @@ webhooks:
       service:
         name: ingress-nginx-controller-admission
         namespace: ingress-nginx
-        port: 8443
+        port: 443
         path: /networking/v1/ingresses
 ---
 # Source: ingress-nginx/templates/admission-webhooks/job-patch/serviceaccount.yaml
