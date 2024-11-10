@@ -17,8 +17,8 @@ In this guide we will run two clusters side by side so we can demonstrate cluste
 Create two clusters:
 
 ```
-kind create cluster --name dev --image kindest/node:v1.23.5
-kind create cluster --name prod --image kindest/node:v1.23.5
+kind create cluster --name dev --image kindest/node:v1.26.15
+kind create cluster --name prod --image kindest/node:v1.26.15
 
 ```
 
