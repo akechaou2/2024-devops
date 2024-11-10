@@ -22,4 +22,4 @@ jobs:
         docker build ./python -t akechaou91000/python:1.0.0
     - name: docker push
       run: |
-        docker push aimvector/python:1.0.0
+        docker push akechaou91000/python:1.0.0
