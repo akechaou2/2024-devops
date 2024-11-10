@@ -19,7 +19,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build python
       run: |
-        docker build ./python -t akechaou91000/python:1.0.0
+        docker build ./python -t $DOCKER_USER/python:1.0.0
     - name: docker push
       run: |
-        docker push akechaou91000/python:1.0.0
+        docker push $DOCKER_USER/python:1.0.0
